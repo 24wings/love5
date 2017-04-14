@@ -1,0 +1,48 @@
+header.header
+    .navbar.navbar-default.navbar-fixed-top
+        .container
+            .row
+                .hidden-xs.hidden-sm.col-md-3.col-lg-3
+                    .navbar-header.navbar-left
+                        a.navbar-brand
+                            img(src='http://micourse.net/Public/img/Brand-M.png')
+                .hidden-xs.visible-sm-block.col-sm-2
+                    .navbar-header.navbar-left
+                        a.navbar-brand
+                            img(src='http://micourse.net/Public/img/Brand-M.png')
+                .visible-xs-block.col-xs-2
+                    .navbar-header.navbar-left
+                        a.navbar-brand
+                            img(src='http://micourse.net/Public/img/Brand-M.png')
+                .col-xs-8.col-sm-5.col-md-5.col-lg-5
+                    .navbar-form
+                        .input-group.input-group-nav
+                            input(type='text',placeholder='查找课程').form-control#input-search
+                            span.input-group-btn
+                                a.btn(style='z-index: 2;margin-left: -42px;')
+                                    span.glyphicon.glyphicon-search
+                .hidden-xs.col-sm-5.col-md-4.col-lg-4
+                    ul.nav.navbar-nav.pull-right
+                        li#nav-index.active
+                            a(href='/') 首页
+                        li
+                            a  课程
+                        li 
+                            a(href='/words') 课件
+                        li 
+                            a  登录
+                .visible-xs-block.col-xs-2
+                    .nav.nav-hamburger.pull-right
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            span.glyphicon.glyphicon-menu-hamburger
+                        ul.dropdown-menu.pull-right
+                            li
+                                a 首页
+                            li 
+                                a 课程
+                            li 
+                                a(href='/words') 课件
+                            li 
+                                a 公告
+                            li
+                                a 登录

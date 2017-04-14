@@ -1,0 +1,103 @@
+{% extends '../layouts/base.html' %} {% import '../macro/state.html' as state %} {% block style%}
+<style>
+    .ui.medium.image {
+        width: 100%;
+    }
+
+    .divider-sm {
+        height: 20px !important;
+        background: rgba(22, 22, 66, .1);
+    }
+
+    .divider-middle {
+        height: 40px !important;
+        background: rgba(22, 22, 66, .1);
+    }
+
+    .divider-lg {
+        height: 80px !important;
+        background: rgba(22, 22, 66, .1);
+    }
+
+    .menu {
+        background: rgba(255, 255, 255, 0.4) !important;
+        position: fixed;
+        bottom: 0;
+    }
+</style>
+{% endblock%} {%block content%} {% if player.state==0%} {{state.unjoin()}} {% endif%} {% if player.state==1%} {{state.joining()}}{%endif%}
+{% if player.state==2 %} {{state.success(player)}} {% endif %} {% if player.state==3 %} {{state.fail()}} {% endif %}
+
+<div class="ui two item menu">
+    <a href="#" class="item">主页</a>
+    <a href="#" class="item">我的</a>
+</div>
+<div class="ui divider-lg"></div>
+{% endblock%} {% block script%} {% if player.state == 0 %}
+<script>
+    WeixinJSBridge.invoke('getBrandWCPayRequest', payargs, function (res) {
+        if (res.err_msg == "get_brand_wcpay_request:ok") {
+            alert("支付成功");
+            // 这里可以跳转到订单完成页面向用户展示
+        } else {
+            alert("支付失败，请重试");
+        }
+    });
+</script>
+{% endif %}
+
+<script>
+    // 参加前付费
+    $('.shape').shape();
+    setInterval(function () {
+        $('.shape').shape('flip right');
+    }, 3000);
+    $('.cookie.nag').nag('show');
+
+    function join() {
+        $.ajax('/join', {
+            success: function (rtn) {
+                if (rtn.isscuccess) {
+                    location.reload();
+                }
+            }
+        })
+    }
+
+    function uploadQrcode() {
+        $('#qrcodeInput')[0].click();
+    }
+
+    function viewQrcode(fileInput) {
+        var file = fileInput.files[0];
+        console.log(file)
+        var reader = new FileReader();
+        var imageData
+        /*  reader.onload = function (event) {
+              imageData = event.target.result;
+              $('#qrcode').attr('src', imageData);
+
+              var canvas = document.createElement('canvas');
+              var ctx = canvas.getContext('2d');
+              ctx.drawImage($('#qrcode')[0], 0, 0, 400, 400);
+              $(canvas).appendTo('body');
+              var compressData = canvas.toDataURL();
+              // $.ajax('/qrcode', {
+              //     method: 'post',
+              //     data: {
+              //         imageData: compressData
+              //     },
+              //     success: function (rtn) {
+              //         console.log(rtn);
+              //     }
+              // })
+
+              // $('#qrcodeSubmit')[0].click();
+          }
+          reader.readAsDataURL(file);
+          */
+
+
+    }
+</script>
+{%endblock %}

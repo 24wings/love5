@@ -1,0 +1,136 @@
+{% macro unjoin() %}
+<div class="container">
+    <div class="ui shape auto">
+        <div class="sides">
+            <div class="side">
+                <img src="https://pic.kuaizhan.com/g1/M00/82/FF/CgpQU1jN-xCAYRf-AAUUAJpPT6Q5693273/imageView/v1/thumbnail/640x360" alt=""
+                    class="ui medium image"> </div>
+            <div class="side active">
+                <img src="https://pic.kuaizhan.com/g1/M00/A6/37/wKjmqVjN-6eAb79bAAE58PE_GtA7008389/imageView/v1/thumbnail/640x360" alt=""
+                    class="ui medium image"></div>
+            <div class="side">
+                <img src="https://pic.kuaizhan.com/g1/M00/A6/37/wKjmqVjN-6aALlS4AAODf0SEk441130381/imageView/v1/thumbnail/640x360" alt=""
+                    class="ui medium image"></div>
+        </div>
+    </div>
+    <h3 class="ui header text-center">Hi</h3>
+    <h4 class="ui header text-center">世界那么大,我想遇见你</h4>
+    <form>
+        <h3 class="ui header text-center">
+            <button class="ui pink button" onclick="join()" style="border-radius:50px;">
+            寻找我的恋人</button>
+        </h3>
+        <div class="ui divider-sm"></div>
+        <h4 class="ui header text-center">目前你已经几百全国</h4>
+        <h4 class="ui header text-center">30%的情敌</h4>
+        <h4 class="ui header text-center">入选率偏低</h4>
+        <h4 class="ui header text-center">建议提高入选率</h4>
+        <div class="ui divider-lg"></div>
+
+    </form>
+</div>
+{% endmacro %} {%macro joining() %}
+
+<div class="ui shape auto">
+    <div class="sides">
+        <div class="side">
+            <img src="https://pic.kuaizhan.com/g1/M01/A6/37/wKjmqVjN-6WAJVjSAALOtVADp6U4982515/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+        <div class="side active">
+            <img src="https://pic.kuaizhan.com/g1/M00/A6/37/wKjmqVjN-6aALlS4AAODf0SEk441130381/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+        <div class="side">
+            <img src="https://pic.kuaizhan.com/g1/M00/A6/37/wKjmqVjN-6eAb79bAAE58PE_GtA7008389/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+    </div>
+</div>
+<h3 class="ui header">小恋正在努力为你匹配中</h3>
+<div class="ui divider-lg"></div>
+
+
+<div class="container">
+    <form action="/" method="POST">
+
+        <div class="ui divider-sm"></div>
+        <h4 class="ui header text-center">目前你已经几百全国</h4>
+        <h4 class="ui header text-center">30%的情敌</h4>
+        <h4 class="ui header text-center">入选率偏低</h4>
+        <h4 class="ui header text-center">建议提高入选率</h4>
+        <div class="ui divider-lg"></div>
+    </form>
+</div>
+
+{% endmacro %} {% macro success(player)%}
+<div class="ui shape auto">
+    <div class="sides">
+        <div class="side"><img src="https://pic.kuaizhan.com/g2/M00/86/05/CgpQVFjJKZeAOHI2AAGYyVjxJR82295340/imageView/v1/thumbnail/640x360"
+                alt="" class="ui medium image"></div>
+        <div class="side active"><img src="https://pic.kuaizhan.com/g2/M00/86/05/CgpQVFjJKY6AAXwmAAC3HWxlzeg4557215/imageView/v1/thumbnail/640x360"
+                alt="" class="ui medium image"></div>
+        <div class="side"><img src="https://pic.kuaizhan.com/g2/M01/92/04/CgpQVFjM08GAFK7BAAL2NPcVbDE5974162/imageView/v1/thumbnail/640x360"
+                alt="" class="ui medium image"></div>
+    </div>
+</div>
+<div class="ui grid">
+    <div class="eight wide column">
+        <img src="{{player.avatar}}" alt="" class="img-responsive">
+    </div>
+    <div class="eight wide column">
+        <img src="{{player.toUser.avatar}}" alt="" class="img-responsive">
+    </div>
+</div>
+<h4 class="ui header text-center">恭喜你,{{player.toUser.name}}与匹配成为情侣</h4>
+
+<h4 class="ui header text-center">Ta的微信号是{{player.toUser.weixinName}}</h4>
+
+<h4 class="ui header">七天恋爱第一天</h4>
+<h4 class="ui header text-center">任务1:</h4>
+<h5 class="ui header text-center small">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h4 class="ui header text-center ">任务2:</h4>
+<h5 class="ui header text-center small">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h4 class="ui header text-center">任务3:</h4>
+<h5 class="ui header text-center small">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h3 class="ui header text-center">任务打卡</h3>
+<h4 class="ui header small">每天的任务早上8点发放。请在次日早上八点之前完成任务</h4>
+<h5 class="ui header small">完成任务后记得打卡，并将聊天记录截屏上传完成打卡！</h5>
+
+<form action="/qrcode" method="POST" enctype="multipart/form-data">
+    <h3 class="ui header text-center">
+        <button onclick="uploadQrcode()" class="ui pink button" style="border-radius:50px;">上传二维码</button> <button class="ui pink button"
+            style="border-radius:50px;">点击上传任务</button></h3>
+    <img src="" alt="" id="qrcode" class="img-responsive">
+
+    <input type="file" id="qrcodeInput" hidden onchange="viewQrcode(this)" name="qrcode" />
+    <button type="submit" id="qrcodeSubmit"></button>
+</form>
+
+<div class="ui divider-lg"></div>
+{% endmacro %} {% macro fail() %}
+<div class="ui shape auto">
+    <div class="sides">
+        <div class="side">
+            <img src="https://pic.kuaizhan.com/g2/M00/86/05/CgpQVFjJKY6AAXwmAAC3HWxlzeg4557215/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+        <div class="side active">
+            <img src="https://pic.kuaizhan.com/g2/M01/92/04/CgpQVFjM08GAFK7BAAL2NPcVbDE5974162/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+        <div class="side">
+            <img src="https://pic.kuaizhan.com/g2/M00/86/05/CgpQVFjJKZeAOHI2AAGYyVjxJR82295340/imageView/v1/thumbnail/640x360" alt=""
+                class="ui medium image">
+        </div>
+
+    </div>
+</div>
+<div class="ui inline cookie nag">
+    <span class="title">很抱歉,本次匹配失败,小恋已经尽力了~呜呜~</span>
+</div>
+<i class="close icon"></i>
+<h4 class="ui header">由于本期后多人数超过预期,导致匹配失败,我们会在下一期继续为你匹配！</h4>
+<h4 class="ui header text-center"> <button class="ui loading pink button" style="border-radius:50px">匹配中</button></h4>
+<div class="ui divider-lg"></div>
+{% endmacro%}

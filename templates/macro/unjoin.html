@@ -1,0 +1,50 @@
+ {% macro success(user,toUser,record) %}
+
+<div class="container">
+    <div class="ui shape auto">
+        <div class="sides">
+            <div class="side">
+                <img src="http://teach.wanviv.com:8888/images/1.jpg" alt="" class="ui medium image"> </div>
+            <div class="side active">
+                <img src="http://teach.wanviv.com:8888/images/2.jpg" alt="" class="ui medium image"></div>
+            <div class="side">
+                <img src="http://teach.wanviv.com:8888/images/3.jpg" alt="" class="ui medium image"></div>
+        </div>
+    </div>
+    <h3 class="ui header text-center">Hi</h3>
+    <h4 class="ui header text-center">世界那么大,我想遇见你</h4>
+    <form action="" method="POST">
+        <h3 class="ui header text-center">
+            <button class="ui pink button" type="submit" style="border-radius:50px;">
+            寻找我的恋人</button>
+        </h3>
+        <div class="ui divider-sm"></div>
+        <h4 class="ui header text-center">目前你已经几百全国</h4>
+        <h4 class="ui header text-center">30%的情敌</h4>
+        <h4 class="ui header text-center">入选率偏低</h4>
+        <h4 class="ui header text-center">建议提高入选率</h4>
+        <div class="ui divider-lg"></div>
+</div>
+</form>
+{% endmacro %} {% macro success()%}
+<div class="ui shape auto">
+    <div class="slides">
+        <div class="side"><img src="/images/1.png" alt="" class="ui medium image"></div>
+        <div class="side"><img src="/images/1.png" alt="" class="ui medium image"></div>
+        <div class="side"><img src="/images/1.png" alt="" class="ui medium image"></div>
+    </div>
+</div>
+<h4 class="ui header text-center">恭喜你,与#{toUser.name}匹配成为情侣</h4>
+<h4 class="ui header">七天恋爱第一天</h4>
+<h4 class="ui header text-center">任务1:</h4>
+<h5 class="ui header text-center">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h4 class="ui header text-center">任务2:</h4>
+<h5 class="ui header text-center">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h4 class="ui header text-center">任务3:</h4>
+<h5 class="ui header text-center">对方发一段走心的自我介绍,包括最近正在忙的一件事情</h5>
+<h3 class="ui header">任务打卡</h3>
+<h4 class="ui header">每天的任务早上8点发放。请在次日早上八点之前完成任务</h4>
+<h5 class="ui header">完成任务后记得打卡，并将聊天记录截屏上传完成打卡！</h5>
+<h3 class="ui header text-center"> <button class="ui pink button" style="border-radius:50px;">点击上传任务</button></h3>
+<div class="ui divider-lg"></div>
+{% endmacro%}

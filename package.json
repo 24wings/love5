@@ -1,0 +1,37 @@
+{
+  "name": "keystone-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/24wings/keystone-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/24wings/keystone-demo/issues"
+  },
+  "homepage": "https://github.com/24wings/keystone-demo#readme",
+  "dependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.41",
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "jade": "^1.11.0",
+    "jquery": "^3.2.1",
+    "keystone": "^4.0.0-beta.5",
+    "multer": "^1.3.0",
+    "qrcode": "^0.8.1",
+    "semantic-ui": "^2.2.10",
+    "swig": "^1.4.2",
+    "underscore": "^1.8.3",
+    "wechat": "^2.1.0",
+    "wechat-oauth": "^1.2.1",
+    "wechat-pay": "^0.2.4",
+    "weixin-pay": "^1.1.7"
+  }
+}

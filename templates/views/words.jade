@@ -1,0 +1,4 @@
+extends ../layouts/base
+block append content
+    each word in words
+        h2:  a(href=word.link) #{word.title}
